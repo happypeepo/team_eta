@@ -1,0 +1,121 @@
+{
+  "departments": [
+    {
+      "name": "Mechanical",
+      "members": [
+        {
+          "id": "mech-1",
+          "name": "Rajesh Kumar",
+          "role": "Lead Mechanical Engineer",
+          "department": "Mechanical",
+          "linkedin": "https://linkedin.com/in/rajesh-kumar",
+          "image": "/images/team/rajesh.jpg"
+        },
+        {
+          "id": "mech-2",
+          "name": "Priya Sharma",
+          "role": "Chassis Design Specialist",
+          "department": "Mechanical",
+          "linkedin": "https://linkedin.com/in/priya-sharma",
+          "image": "/images/team/priya.jpg"
+        },
+        {
+          "id": "mech-3",
+          "name": "Amit Patel",
+          "role": "Aerodynamics Engineer",
+          "department": "Mechanical",
+          "linkedin": "https://linkedin.com/in/amit-patel",
+          "image": "/images/team/amit.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Electrical",
+      "members": [
+        {
+          "id": "elec-1",
+          "name": "Sneha Reddy",
+          "role": "Lead Electrical Engineer",
+          "department": "Electrical",
+          "linkedin": "https://linkedin.com/in/sneha-reddy",
+          "image": "/images/team/sneha.jpg"
+        },
+        {
+          "id": "elec-2",
+          "name": "Vikram Singh",
+          "role": "Battery Systems Engineer",
+          "department": "Electrical",
+          "linkedin": "https://linkedin.com/in/vikram-singh",
+          "image": "/images/team/vikram.jpg"
+        },
+        {
+          "id": "elec-3",
+          "name": "Ananya Das",
+          "role": "Power Electronics Engineer",
+          "department": "Electrical",
+          "linkedin": "https://linkedin.com/in/ananya-das",
+          "image": "/images/team/ananya.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "members": [
+        {
+          "id": "auto-1",
+          "name": "Arjun Mehta",
+          "role": "Lead Autonomous Systems",
+          "department": "Autonomous",
+          "linkedin": "https://linkedin.com/in/arjun-mehta",
+          "image": "/images/team/arjun.jpg"
+        },
+        {
+          "id": "auto-2",
+          "name": "Kavya Nair",
+          "role": "AI/ML Engineer",
+          "department": "Autonomous",
+          "linkedin": "https://linkedin.com/in/kavya-nair",
+          "image": "/images/team/kavya.jpg"
+        },
+        {
+          "id": "auto-3",
+          "name": "Rohan Joshi",
+          "role": "Sensor Integration Engineer",
+          "department": "Autonomous",
+          "linkedin": "https://linkedin.com/in/rohan-joshi",
+          "image": "/images/team/rohan.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "members": [
+        {
+          "id": "mgmt-1",
+          "name": "Aditya Verma",
+          "role": "Team Lead",
+          "department": "Management",
+          "linkedin": "https://linkedin.com/in/aditya-verma",
+          "image": "/images/team/aditya.jpg"
+        },
+        {
+          "id": "mgmt-2",
+          "name": "Meera Iyer",
+          "role": "Project Manager",
+          "department": "Management",
+          "linkedin": "https://linkedin.com/in/meera-iyer",
+          "image": "/images/team/meera.jpg"
+        },
+        {
+          "id": "mgmt-3",
+          "name": "Siddharth Rao",
+          "role": "Sponsorship Coordinator",
+          "department": "Management",
+          "linkedin": "https://linkedin.com/in/siddharth-rao",
+          "image": "/images/team/siddharth.jpg"
+        }
+      ]
+    }
+  ]
+}
+

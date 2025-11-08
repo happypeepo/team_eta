@@ -1,0 +1,92 @@
+[
+  {
+    "tier": "Title Sponsors",
+    "sponsors": [
+      {
+        "name": "Shell Eco-marathon",
+        "logo": "/sponsors/shell.png"
+      },
+      {
+        "name": "K. J. Somaiya College of Engineering",
+        "logo": "/sponsors/kjsce.png"
+      },
+      {
+        "name": "Somaiya Trust",
+        "logo": "/sponsors/somaiya_trust.png"
+      }
+    ]
+  },
+  {
+    "tier": "Gold Sponsors",
+    "sponsors": [
+      {
+        "name": "Ansys",
+        "logo": "/sponsors/ansys.png"
+      },
+      {
+        "name": "Altair",
+        "logo": "/sponsors/altair.png"
+      },
+      {
+        "name": "Siemens NX / Solid Edge",
+        "logo": "/sponsors/siemens.png"
+      },
+      {
+        "name": "ANSYS Innovation Space",
+        "logo": "/sponsors/ansys_innovation.png"
+      }
+    ]
+  },
+  {
+    "tier": "Silver Sponsors",
+    "sponsors": [
+      {
+        "name": "Autodesk",
+        "logo": "/sponsors/autodesk.png"
+      },
+      {
+        "name": "Aeron Composite Pvt. Ltd.",
+        "logo": "/sponsors/aeron.png"
+      },
+      {
+        "name": "Poly Infusion",
+        "logo": "/sponsors/poly_infusion.png"
+      },
+      {
+        "name": "SolidWorks Student Program",
+        "logo": "/sponsors/solidworks.png"
+      }
+    ]
+  },
+  {
+    "tier": "Bronze Sponsors",
+    "sponsors": [
+      {
+        "name": "Maker’s Asylum",
+        "logo": "/sponsors/makers_asylum.png"
+      },
+      {
+        "name": "RC Hobby Tech",
+        "logo": "/sponsors/rc_hobby.png"
+      },
+      {
+        "name": "P. K. Shukla (Mentor Support)",
+        "logo": ""
+      }
+    ]
+  },
+  {
+    "tier": "Academic & Community Partners",
+    "sponsors": [
+      {
+        "name": "KJSCE Robotics Society",
+        "logo": ""
+      },
+      {
+        "name": "Team ETA Alumni Network",
+        "logo": ""
+      }
+    ]
+  }
+]
+

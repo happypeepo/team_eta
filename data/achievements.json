@@ -1,0 +1,47 @@
+{
+  "stats": {
+    "prototypes": 6,
+    "awards": 6,
+    "nationalVictories": 1,
+    "internationalTitles": 1,
+    "goal": "500+ km/l"
+  },
+  "awards": [
+    {
+      "year": "2022",
+      "title": "Regional Winners, Pitch the Future",
+      "rank": "3rd in Asia",
+      "competition": "Shell Eco-marathon",
+      "type": "International"
+    },
+    {
+      "year": "2021",
+      "title": "Regional Winners, Road to 2050 + Virtual Technical Inspection",
+      "rank": "1st in Asia",
+      "competition": "Shell Eco-marathon",
+      "type": "International"
+    },
+    {
+      "year": "2020",
+      "title": "Electric Vehicle Battery Charging Challenge + CO₂ Reduction",
+      "rank": "1st in Asia, Top 5 Globally",
+      "competition": "Shell Eco-marathon",
+      "type": "International"
+    },
+    {
+      "year": "2019",
+      "title": "Off-Track Safety Award",
+      "rank": "1st in India (270 km/l)",
+      "competition": "Shell Eco-marathon",
+      "type": "National"
+    },
+    {
+      "year": "2017",
+      "title": "First Indian Carbon Fiber Monocoque",
+      "rank": "1st in India, 5th in Asia (153 km/l)",
+      "competition": "Shell Eco-marathon",
+      "type": "International"
+    }
+  ]
+}
+

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "jugaad",
+    "name": "Jugaad",
+    "year": "2013",
+    "category": "Prototype",
+    "description": "First sheet metal prototype.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "N/A",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  },
+  {
+    "id": "j-14",
+    "name": "J-14",
+    "year": "2014",
+    "category": "Prototype",
+    "description": "Fiberglass body with tricolor aesthetic.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "N/A",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  },
+  {
+    "id": "arya",
+    "name": "Arya",
+    "year": "2015",
+    "category": "Prototype",
+    "description": "First carbon fiber shell; 153 km/l; 5th in Asia.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "153 km/l",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  },
+  {
+    "id": "triton",
+    "name": "Triton",
+    "year": "2017",
+    "category": "Prototype",
+    "description": "Carbon fiber monocoque; first Indian team to clear all inspections in one go.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "N/A",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  },
+  {
+    "id": "mahil",
+    "name": "Mahil",
+    "year": "2019",
+    "category": "Prototype",
+    "description": "270 km/l; 1st in India; Safety Award winner.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "270 km/l",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  },
+  {
+    "id": "yugant",
+    "name": "Yugant",
+    "year": "2023",
+    "category": "Prototype",
+    "description": "Symbol of the transition to sustainable, eco-friendly vehicles.",
+    "specs": {
+      "power": "N/A",
+      "weight": "N/A",
+      "range": "N/A",
+      "engine": "N/A",
+      "topSpeed": "N/A"
+    },
+    "achievements": [],
+    "image": ""
+  }
+]
+
