@@ -4,7 +4,8 @@
     "awards": 6,
     "nationalVictories": 1,
     "internationalTitles": 1,
-    "goal": "500+ km/l"
+    "goal": "500+ km/l",
+    "yearsActive": 12
   },
   "awards": [
     {
@@ -44,4 +45,3 @@
     }
   ]
 }
-
