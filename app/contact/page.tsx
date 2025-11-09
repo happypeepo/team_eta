@@ -48,7 +48,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: Mail,
+      icon: Envelope,
       label: "Email",
       value: "eta.engg@somaiya.edu",
       href: "mailto:eta.engg@somaiya.edu",
@@ -68,10 +68,10 @@ export default function ContactPage() {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/team-eta/" },
-    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/team_eta_/" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com/Team_ETA" },
-    { name: "YouTube", icon: Youtube, href: "https://www.youtube.com/c/TeamETAKJSCE" },
+    { icon: LinkedinLogo, label: "LinkedIn", href: "https://linkedin.com/company/team-eta" },
+    { icon: InstagramLogo, label: "Instagram", href: "https://instagram.com/team_eta" },
+    { icon: TwitterLogo, label: "Twitter", href: "https://twitter.com/team_eta" },
+    { icon: YoutubeLogo, label: "YouTube", href: "https://youtube.com/teameta" },
   ];
 
   return (
@@ -204,14 +204,14 @@ export default function ContactPage() {
                       const Icon = social.icon;
                       return (
                         <motion.a
-                          key={social.name}
+                          key={social.label}
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1, y: -2 }}
                           whileTap={{ scale: 0.9 }}
                           className="p-3 rounded-full bg-secondary/50 hover:bg-primary/10 text-primary transition-colors"
-                          aria-label={social.name}
+                          aria-label={social.label}
                         >
                           <Icon className="h-5 w-5" />
                         </motion.a>

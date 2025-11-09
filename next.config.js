@@ -5,7 +5,6 @@ const nextConfig = {
   
   // Enable production optimizations
   productionBrowserSourceMaps: false,
-  optimizeFonts: true,
   compress: true,
   
   // Image optimization

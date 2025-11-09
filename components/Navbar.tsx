@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Icon } from "./ui/icon";
 import { Icons } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
@@ -59,14 +60,16 @@ export function Navbar() {
               <Icon name={isMobileMenuOpen ? "close" : "menu"} className="h-6 w-6" />
             </button>
             <Link href="/" className="flex items-center ml-4 transition-opacity hover:opacity-90">
-              <img
-                src="/images/team-eta-logo.png"
-                alt="Team ETA"
-                className="h-10 w-auto drop-shadow-sm"
-                style={{
-                  filter: 'brightness(1.1) contrast(1.1) saturate(1.1)'
-                }}
-              />
+              <div className="relative h-10 w-auto drop-shadow-sm" style={{ filter: 'brightness(1.1) contrast(1.1) saturate(1.1)' }}>
+                <Image
+                  src="/images/team-eta-logo.png"
+                  alt="Team ETA"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
