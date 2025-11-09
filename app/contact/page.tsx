@@ -152,6 +152,9 @@ export default function ContactPage() {
                     type="submit"
                     size="lg"
                     className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
