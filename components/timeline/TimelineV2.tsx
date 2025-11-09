@@ -106,80 +106,80 @@ interface TimelineProps {
 
 export function Timeline({ children }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [lineStyle, setLineStyle] = useState({
-    top: '0px',
-    height: '0px',
-    opacity: 0
-  });
+  const [lineHeight, setLineHeight] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
   
+  // Animate the line based on scroll progress
   const lineY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineOpacity = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0]);
 
   // Convert children to array and filter out any null/undefined
   const childrenArray = React.Children.toArray(children).filter(Boolean);
 
-  // Update line position on mount and resize
+  // Update line position on mount and scroll
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!containerRef.current) return;
-
-    const updateLine = () => {
+    
+    const updateLineHeight = () => {
+      if (!containerRef.current) return;
+      
       const container = containerRef.current;
-      if (!container) return;
-
-      const firstItem = container.querySelector('[data-year]') as HTMLElement;
-      if (!firstItem) return;
-
-      const conclusionSection = container.querySelector('section');
-      if (!conclusionSection) return;
-
-      const firstItemRect = firstItem.getBoundingClientRect();
-      const conclusionRect = conclusionSection.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
       const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
       
-      // Start the line from the first item
-      const startY = firstItemRect.top + scrollY + 24;
-      // End the line at the conclusion section
-      const endY = conclusionRect.top + scrollY - 80;
+      // Calculate the visible height of the container
+      const containerTop = containerRect.top + scrollY;
+      const containerBottom = containerTop + containerRect.height;
+      const visibleTop = Math.max(0, scrollY - containerTop);
+      const visibleBottom = Math.min(containerRect.height, scrollY + viewportHeight - containerTop);
       
-      setLineStyle({
-        top: `${startY}px`,
-        height: `${Math.max(0, endY - startY)}px`,
-        opacity: 1
-      });
+      // Calculate the visible height percentage
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      const totalHeight = containerRect.height;
+      const newHeight = totalHeight > 0 ? (visibleHeight / totalHeight) * 100 : 0;
+      
+      setLineHeight(Math.min(100, Math.max(0, newHeight)));
     };
-
-    // Initial update
-    updateLine();
     
-    // Update on resize
-    const handleResize = () => requestAnimationFrame(updateLine);
-    window.addEventListener('resize', handleResize);
+    // Set initial height
+    updateLineHeight();
+    setIsMounted(true);
     
+    // Add scroll and resize listeners
+    window.addEventListener('scroll', updateLineHeight, { passive: true });
+    window.addEventListener('resize', updateLineHeight);
+    
+    // Cleanup
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', updateLineHeight);
+      window.removeEventListener('resize', updateLineHeight);
     };
   }, []);
 
   return (
     <div className="relative" ref={containerRef}>
-      {/* Vertical line */}
-      <div 
-        className="fixed left-1/2 w-0.5 bg-gradient-to-b from-cyan-500 to-blue-500 z-0"
+      {/* Animated vertical line */}
+      <motion.div 
+        className="fixed left-1/2 w-0.5 bg-gradient-to-b from-cyan-500 via-blue-500 to-cyan-500 z-0"
         style={{
-          ...lineStyle,
+          top: '0',
+          height: isMounted ? `${lineHeight}%` : '0%',
           transform: 'translateX(-50%)',
+          opacity: lineOpacity,
+          transition: isMounted ? 'height 0.3s ease-out' : 'none',
         }}
       >
         <motion.div 
           className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-cyan-400/80 to-transparent"
           style={{ y: lineY }}
         />
-      </div>
+      </motion.div>
 
       {/* Timeline content */}
       <div className="relative z-0 pt-12 pb-24">
