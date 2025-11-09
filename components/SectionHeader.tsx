@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 interface SectionHeaderProps {
   title: string;
   subtitle?: string;
+  description?: string;
   className?: string;
 }
 
-export function SectionHeader({ title, subtitle, className }: SectionHeaderProps) {
+export function SectionHeader({ title, subtitle, description, className }: SectionHeaderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -23,6 +24,11 @@ export function SectionHeader({ title, subtitle, className }: SectionHeaderProps
       {subtitle && (
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-serif uppercase tracking-wider" style={{ fontFamily: 'var(--font-serif)' }}>
           {subtitle}
+        </p>
+      )}
+      {description && (
+        <p className="mt-4 text-muted-foreground max-w-3xl mx-auto text-base">
+          {description}
         </p>
       )}
     </motion.div>
