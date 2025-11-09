@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Icon } from "./ui/icon";
+import { Icons } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -12,6 +13,7 @@ const navItems = [
   { name: "Our Cars", href: "/cars" },
   { name: "Shell Eco-marathon", href: "/sem" },
   { name: "Achievements", href: "/achievements" },
+  { name: "Team", href: "/team" },
   { name: "Sponsors", href: "/sponsors" },
   { name: "Crowdfunding", href: "/crowdfunding" },
   { name: "Contact", href: "/contact" },
@@ -46,16 +48,27 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-2xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent"
-              style={{ fontFamily: 'var(--font-sans)' }}
+          {/* Logo and Brand */}
+          <div className="flex items-center">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary md:hidden"
+              aria-expanded="false"
             >
-              Team ETA
-            </motion.div>
-          </Link>
+              <span className="sr-only">Open main menu</span>
+              <Icon name={isMobileMenuOpen ? "close" : "menu"} className="h-6 w-6" />
+            </button>
+            <Link href="/" className="flex items-center ml-4 transition-opacity hover:opacity-90">
+              <img
+                src="/images/team-eta-logo.png"
+                alt="Team ETA"
+                className="h-10 w-auto drop-shadow-sm"
+                style={{
+                  filter: 'brightness(1.1) contrast(1.1) saturate(1.1)'
+                }}
+              />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -78,7 +91,7 @@ export function Navbar() {
             className="md:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Icon name={isMobileMenuOpen ? "close" : "menu"} size="lg" className="text-foreground" />
           </button>
         </div>
       </div>

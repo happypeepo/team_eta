@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { IndianRupee, Share2, Instagram, Linkedin, Twitter, CreditCard, Smartphone } from "lucide-react";
+import { CurrencyInr, ShareNetwork, InstagramLogo, LinkedinLogo, TwitterLogo, CreditCard, DeviceMobile } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -135,7 +135,7 @@ export default function CrowdfundingPage() {
                   }`}>
                     <CardHeader>
                       <div className="flex items-baseline gap-2 mb-2">
-                        <IndianRupee className="h-6 w-6 text-primary" />
+                        <CurrencyInr className="h-4 w-4" weight="bold" />
                         <CardTitle className="text-3xl">{tier.amount.toLocaleString('en-IN')}</CardTitle>
                       </div>
                       <CardTitle className="text-xl">{tier.title}</CardTitle>
@@ -173,15 +173,15 @@ export default function CrowdfundingPage() {
               <h3 className="text-xl font-bold mb-6 text-center">Payment Options</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
-                  <Smartphone className="h-6 w-6" />
+                  <DeviceMobile className="h-5 w-5" weight="fill" />
                   <span>UPI</span>
                 </Button>
                 <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
-                  <CreditCard className="h-6 w-6" />
+                  <CreditCard className="h-5 w-5" weight="fill" />
                   <span>Razorpay</span>
                 </Button>
                 <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
-                  <CreditCard className="h-6 w-6" />
+                  <CreditCard className="h-5 w-5" weight="fill" />
                   <span>PayPal</span>
                 </Button>
               </div>
@@ -194,7 +194,7 @@ export default function CrowdfundingPage() {
           <Card>
             <CardContent className="pt-6 text-center">
               <h3 className="text-xl font-bold mb-4 flex items-center justify-center gap-2">
-                <Share2 className="h-5 w-5" />
+                <ShareNetwork className="h-4 w-4" weight="bold" />
                 Share Our Campaign
               </h3>
               <p className="text-muted-foreground mb-6">
@@ -209,7 +209,7 @@ export default function CrowdfundingPage() {
                   whileTap={{ scale: 0.9 }}
                   className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg transition-shadow"
                 >
-                  <Instagram className="h-5 w-5" />
+                  <InstagramLogo className="h-5 w-5" weight="fill" />
                 </motion.a>
                 <motion.a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
@@ -219,7 +219,7 @@ export default function CrowdfundingPage() {
                   whileTap={{ scale: 0.9 }}
                   className="p-3 rounded-full bg-blue-600 text-white hover:shadow-lg transition-shadow"
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <LinkedinLogo className="h-5 w-5" weight="fill" />
                 </motion.a>
                 <motion.a
                   href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
@@ -229,7 +229,7 @@ export default function CrowdfundingPage() {
                   whileTap={{ scale: 0.9 }}
                   className="p-3 rounded-full bg-black text-white hover:shadow-lg transition-shadow"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <TwitterLogo className="h-5 w-5" weight="fill" />
                 </motion.a>
               </div>
             </CardContent>

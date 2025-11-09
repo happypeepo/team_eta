@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Instagram, Twitter, Mail, Globe } from "lucide-react";
+import { LinkedinLogo, InstagramLogo, TwitterLogo, Envelope, Globe } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/team-eta" },
-  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/team_eta_" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Email", icon: Mail, href: "mailto:eta.engg@somaiya.edu" },
+  { name: "LinkedIn", icon: LinkedinLogo, href: "https://www.linkedin.com/company/team-eta" },
+  { name: "Instagram", icon: InstagramLogo, href: "https://www.instagram.com/team_eta_" },
+  { name: "Twitter", icon: TwitterLogo, href: "https://twitter.com/team_eta_" },
+  { name: "Email", icon: Envelope, href: "mailto:teameta@somaiya.edu" },
   { name: "Website", icon: Globe, href: "https://www.teameta.in" },
 ];
 
@@ -26,7 +26,7 @@ export function Footer() {
               Engineering Tomorrow. Driving Innovation.
             </p>
             <p className="text-sm text-muted-foreground mb-2">
-              K. J. Somaiya College of Engineering, Mumbai
+              K. J. Somaiya School of Engineering, Mumbai
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -52,11 +52,6 @@ export function Footer() {
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About
-                </Link>
-              </li>
-              <li>
-                <Link href="/cars" className="text-muted-foreground hover:text-primary transition-colors">
-                  Our Cars
                 </Link>
               </li>
               <li>

@@ -4,8 +4,38 @@
     "awards": 6,
     "nationalVictories": 1,
     "internationalTitles": 1,
+    "yearsActive": 10,
+    "competitions": 8,
+    "teamMembers": 30,
     "goal": "500+ km/l"
   },
+  "timeline": [
+    {
+      "year": "2025",
+      "title": "Transition to Urban Concept",
+      "description": "Expanding our horizons with road-ready vehicle designs"
+    },
+    {
+      "year": "2022",
+      "title": "Regional Recognition",
+      "description": "Ranked 3rd in Asia for Pitch the Future competition"
+    },
+    {
+      "year": "2021",
+      "title": "Asian Champions",
+      "description": "1st place in Asia for Road to 2050 challenge"
+    },
+    {
+      "year": "2020",
+      "title": "Global Recognition",
+      "description": "Top 5 globally in Electric Vehicle Battery Charging Challenge"
+    },
+    {
+      "year": "2015",
+      "title": "Team ETA Founded",
+      "description": "Began our journey in energy-efficient vehicle design"
+    }
+  ],
   "awards": [
     {
       "year": "2022",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Calendar, Star, TrendingUp } from "lucide-react";
+import { Medal, Trophy, Calendar, Star, ChartLineUp } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionWrapper, StaggerWrapper, StaggerItem } from "@/components/MotionWrapper";
@@ -29,40 +29,52 @@ export default function AchievementsPage() {
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                     {stats.yearsActive}+
                   </div>
-                  <div className="text-sm text-muted-foreground">Years Active</div>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Calendar className="h-5 w-5" weight="bold" />
+                    <span>Years Active</span>
+                  </div>
                 </CardContent>
               </Card>
             </StaggerItem>
             <StaggerItem>
               <Card className="text-center hover:glow-hover transition-all">
                 <CardContent className="pt-6">
-                  <Trophy className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <Trophy className="h-8 w-8 text-amber-400 mx-auto mb-4" weight="fill" />
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                     {stats.competitions}
                   </div>
-                  <div className="text-sm text-muted-foreground">Competitions</div>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Calendar className="h-5 w-5" weight="bold" />
+                    <span>Competitions</span>
+                  </div>
                 </CardContent>
               </Card>
             </StaggerItem>
             <StaggerItem>
               <Card className="text-center hover:glow-hover transition-all">
                 <CardContent className="pt-6">
-                  <Award className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <Medal className="h-8 w-8 text-primary mx-auto mb-4" weight="fill" />
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                     {stats.awards}
                   </div>
-                  <div className="text-sm text-muted-foreground">Awards</div>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Calendar className="h-5 w-5" weight="bold" />
+                    <span>Awards</span>
+                  </div>
                 </CardContent>
               </Card>
             </StaggerItem>
             <StaggerItem>
               <Card className="text-center hover:glow-hover transition-all">
                 <CardContent className="pt-6">
-                  <Star className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <Star className="h-8 w-8 text-amber-400 mx-auto mb-4" weight="fill" />
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                     {stats.teamMembers}+
                   </div>
-                  <div className="text-sm text-muted-foreground">Team Members</div>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Calendar className="h-5 w-5" weight="bold" />
+                    <span>Team Members</span>
+                  </div>
                 </CardContent>
               </Card>
             </StaggerItem>
@@ -85,7 +97,7 @@ export default function AchievementsPage() {
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
                         <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
-                          <Award className="h-6 w-6 text-primary" />
+                          <Medal className="h-5 w-5 text-primary" weight="fill" />
                         </div>
                         <div className="flex-grow">
                           <h3 className="font-semibold mb-2 text-lg">{award.title}</h3>
@@ -109,7 +121,7 @@ export default function AchievementsPage() {
           <Card className="max-w-4xl mx-auto">
             <CardContent className="pt-6">
               <div className="flex items-center gap-4 mb-6">
-                <TrendingUp className="h-8 w-8 text-primary" />
+                <ChartLineUp className="h-5 w-5 text-green-500" weight="fill" />
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
                   Key Milestones
                 </h2>

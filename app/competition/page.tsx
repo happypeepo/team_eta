@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Calendar, Target, Award } from "lucide-react";
+import { Trophy, Calendar, Target, Medal } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MotionWrapper, StaggerWrapper, StaggerItem } from "@/components/MotionWrapper";
@@ -41,7 +41,7 @@ export default function CompetitionPage() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <Target className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <Target className="h-5 w-5 text-primary" weight="fill" />
                     <div>
                       <h4 className="font-semibold mb-1">Our Goal</h4>
                       <p className="text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export default function CompetitionPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <Trophy className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <Trophy className="h-8 w-8 text-amber-400" weight="fill" />
                     <div>
                       <h4 className="font-semibold mb-1">Our Approach</h4>
                       <p className="text-sm text-muted-foreground">
@@ -102,7 +102,7 @@ export default function CompetitionPage() {
                             <Calendar className="h-4 w-4 text-primary" />
                             <CardTitle className="text-primary">{item.year}</CardTitle>
                           </div>
-                          <h3 className="text-xl font-semibold">{item.event}</h3>
+                          <h3 className="text-xl font-semibold">{item.title}</h3>
                         </CardHeader>
                         <CardContent>
                           <p className="text-muted-foreground">{item.description}</p>
@@ -128,7 +128,7 @@ export default function CompetitionPage() {
                 <Card className="hover:glow-hover transition-all h-full">
                   <CardContent className="pt-6">
                     <div className="flex items-start gap-4">
-                      <Award className="h-8 w-8 text-primary flex-shrink-0" />
+                      <Medal className="h-5 w-5 text-amber-400" weight="fill" />
                       <div>
                         <h3 className="font-semibold mb-2">{award.title}</h3>
                         <p className="text-sm text-muted-foreground mb-1">{award.competition}</p>

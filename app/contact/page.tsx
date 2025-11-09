@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, Send, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
+import { Envelope, MapPin, Globe, PaperPlaneTilt, LinkedinLogo, InstagramLogo, TwitterLogo, YoutubeLogo } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -62,7 +62,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       label: "Location",
-      value: "K. J. Somaiya College of Engineering, Mumbai",
+      value: "K. J. Somaiya School of Engineering, Mumbai",
       href: "#",
     },
   ];
@@ -152,16 +152,6 @@ export default function ContactPage() {
                     type="submit"
                     size="lg"
                     className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="ml-2 h-4 w-4" />
-                      </>
-                    )}
                   </Button>
                 </form>
               </CardContent>
@@ -192,9 +182,9 @@ export default function ContactPage() {
                           <Icon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                           <div>
                             <p className="text-sm text-muted-foreground">{info.label}</p>
-                            <p className="font-medium group-hover:text-primary transition-colors">
-                              {info.value}
-                            </p>
+                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                              <LinkedinLogo className="h-5 w-5" />
+                            </a>
                           </div>
                         </motion.a>
                       );
@@ -235,9 +225,10 @@ export default function ContactPage() {
                     <div className="text-center">
                       <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
                       <p className="text-sm text-muted-foreground">Map Location</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        (Embed Google Maps here)
-                      </p>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Envelope className="h-5 w-5" />
+                        teameta@somaiya.edu
+                      </div>
                     </div>
                   </div>
                 </CardContent>

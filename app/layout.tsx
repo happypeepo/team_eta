@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { League_Spartan, Sanchez } from "next/font/google";
+import { League_Spartan, Sanchez, Sacramento, Dancing_Script, Pacifico, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
+// Font configurations
 const leagueSpartan = League_Spartan({ 
   subsets: ["latin"],
   variable: "--font-sans",
@@ -14,6 +15,35 @@ const leagueSpartan = League_Spartan({
 const sanchez = Sanchez({
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
+  weight: ["400"],
+});
+
+// Cursive font options
+const sacramento = Sacramento({
+  subsets: ["latin"],
+  variable: "--font-cursive-1",
+  display: "swap",
+  weight: ["400"],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-cursive-2",
+  display: "swap",
+  weight: ["400", "700"],
+});
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  variable: "--font-cursive-3",
+  display: "swap",
+  weight: ["400"],
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: "--font-cursive-4",
   display: "swap",
   weight: ["400"],
 });
@@ -37,17 +67,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${leagueSpartan.variable} ${sanchez.variable} font-sans`} suppressHydrationWarning>
+    <html 
+      lang="en" 
+      className={`${leagueSpartan.variable} ${sanchez.variable} ${sacramento.variable} ${dancingScript.variable} ${pacifico.variable} ${greatVibes.variable} dark`} 
+      suppressHydrationWarning
+    >
+      <head />
+      <body className="min-h-screen bg-background font-sans antialiased">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
   );
 }
-

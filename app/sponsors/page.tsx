@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ExternalLink, Sparkles, Award, Star, Gem, Check } from "lucide-react";
+import { ArrowSquareOut, Sparkle, Star, Gem, Check, CheckCircle, Medal as Award } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,64 +11,92 @@ import { MotionWrapper, StaggerWrapper, StaggerItem } from "@/components/MotionW
 import sponsorsData from "@/data/sponsors.json";
 
 const tierColors = {
-  Platinum: "from-cyan-400 to-blue-500",
-  Gold: "from-yellow-400 to-orange-500",
-  Silver: "from-gray-300 to-gray-500",
-  Bronze: "from-amber-600 to-amber-800",
+  "Title Sponsors": "from-purple-500 to-indigo-600",
+  "Gold Sponsors": "from-yellow-400 to-orange-500",
+  "Silver Sponsors": "from-gray-300 to-gray-500",
+  "Bronze Sponsors": "from-amber-600 to-amber-800",
+  "Partners": "from-blue-400 to-cyan-500",
 };
 
 const sponsorshipTiers = [
   {
-    name: "Platinum",
+    name: "Title",
     icon: Gem,
-    color: "from-cyan-400 to-blue-500",
+    color: "from-purple-500 to-indigo-600",
     benefits: [
-      "Logo placement on vehicle",
-      "Prominent website placement",
-      "Social media recognition",
-      "Event invitations",
-      "Team presentation opportunities",
-      "Exclusive behind-the-scenes access",
+      "Local & International Event Invites",
+      "200×200 px logo on Website",
+      "160×160 px logo on Homepage",
+      "3\"×3\" logo on printed materials",
+      "500×300 px logo on Instagram",
+      "6\"×6\" logo on team shirts",
+      "Logo on team luggage",
+      "8\"×8\" logo on driver's suit",
+      "Choose driver's suit color",
+      "20\"×20\" logo on standees",
+      "7\"×7\" logo on competition car"
     ],
-    investment: "₹5,00,000+",
   },
   {
     name: "Gold",
     icon: Star,
     color: "from-yellow-400 to-orange-500",
     benefits: [
-      "Logo on team apparel",
-      "Website placement",
-      "Social media mentions",
-      "Event invitations",
-      "Team presentation opportunities",
+      "Local Event Invites",
+      "200×200 px logo on Website",
+      "100×100 px logo on Homepage",
+      "3\"×3\" logo on printed materials",
+      "Instagram acknowledgement",
+      "4\"×4\" logo on team shirts",
+      "Logo on team luggage",
+      "10\"×10\" logo on standees",
+      "5\"×5\" logo on competition car"
     ],
-    investment: "₹2,00,000 - ₹4,99,999",
   },
   {
     name: "Silver",
     icon: Award,
     color: "from-gray-300 to-gray-500",
     benefits: [
-      "Website listing",
-      "Social media recognition",
-      "Event invitations",
-      "Team updates",
+      "Local Event Invites",
+      "100×100 px logo on Website",
+      "3\"×3\" logo on printed materials",
+      "Instagram acknowledgement",
+      "3\"×3\" logo on team shirts",
+      "5\"×5\" logo on standees",
+      "3\"×3\" logo on competition car"
     ],
-    investment: "₹1,00,000 - ₹1,99,999",
   },
   {
     name: "Bronze",
-    icon: Sparkles,
+    icon: Sparkle,
     color: "from-amber-600 to-amber-800",
     benefits: [
-      "Website listing",
-      "Social media mention",
-      "Team updates",
+      "Local Event Invites",
+      "100×100 px logo on Website",
+      "3\"×3\" logo on printed materials",
+      "Instagram acknowledgement",
+      "2\"×2\" logo on team shirts",
+      "3\"×3\" logo on standees",
+      "2\"×2\" logo on competition car"
     ],
-    investment: "₹25,000 - ₹99,999",
   },
 ];
+
+const getTierColor = (tierName: string): string => {
+  switch (tierName) {
+    case "Title":
+      return "text-purple-500";
+    case "Gold":
+      return "text-yellow-400";
+    case "Silver":
+      return "text-gray-300";
+    case "Bronze":
+      return "text-amber-600";
+    default:
+      return "text-gray-500";
+  }
+};
 
 export default function SponsorsPage() {
   return (
@@ -79,40 +107,57 @@ export default function SponsorsPage() {
           subtitle="We're grateful to our partners who support our mission to build sustainable vehicles."
         />
 
-        <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {sponsorsData.map((sponsor) => (
-            <StaggerItem key={sponsor.id}>
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card className="h-full hover:glow-hover transition-all">
-                  <CardContent className="pt-6 flex flex-col items-center text-center">
-                    <div className="relative w-32 h-32 bg-secondary/50 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-muted-foreground text-sm">Logo</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{sponsor.name}</h3>
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${tierColors[sponsor.tier as keyof typeof tierColors]} text-white mb-4`}>
-                      {sponsor.tier}
-                    </span>
-                    <motion.a
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Button variant="outline" size="sm">
-                        Visit Website
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Button>
-                    </motion.a>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerWrapper>
+        {sponsorsData.map((tierGroup) => (
+          <div key={tierGroup.tier} className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">{tierGroup.tier}</h2>
+            <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {tierGroup.sponsors.map((sponsor, index) => (
+                <StaggerItem key={`${tierGroup.tier}-${index}`}>
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Card className="h-full hover:glow-hover transition-all">
+                      <CardContent className="pt-6 flex flex-col items-center text-center">
+                        <div className="relative w-32 h-32 bg-secondary/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                          {sponsor.logo ? (
+                            <Image
+                              src={sponsor.logo}
+                              alt={sponsor.name}
+                              width={128}
+                              height={128}
+                              className="object-contain p-2"
+                            />
+                          ) : (
+                            <span className="text-muted-foreground text-sm">Logo</span>
+                          )}
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">{sponsor.name}</h3>
+                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${tierColors[tierGroup.tier as keyof typeof tierColors] || 'from-gray-500 to-gray-700'} text-white mb-4`}>
+                          {tierGroup.tier}
+                        </span>
+                        {sponsor.website && sponsor.website !== '#' && (
+                          <motion.a
+                            href={sponsor.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button variant="outline" size="sm">
+                              Visit Website
+                              <ArrowSquareOut className="h-4 w-4 ml-1" weight="bold" />
+                            </Button>
+                          </motion.a>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </StaggerWrapper>
+          </div>
+        ))}
 
         {/* Sponsorship Tiers */}
         <MotionWrapper className="mb-20">
@@ -131,22 +176,19 @@ export default function SponsorsPage() {
                     <Card className="h-full flex flex-col hover:glow-hover transition-all">
                       <CardHeader>
                         <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center mb-4`}>
-                          <Icon className="h-6 w-6 text-white" />
+                          <Sparkle className="h-5 w-5 text-amber-400" weight="fill" />
                         </div>
                         <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                        <CardDescription className="text-primary font-semibold">
-                          {tier.investment}
-                        </CardDescription>
                       </CardHeader>
                       <CardContent className="flex-grow">
-                        <ul className="space-y-3">
+                        <div className="flex-1 space-y-2 max-h-60 overflow-y-auto pr-2">
                           {tier.benefits.map((benefit, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm">
-                              <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="text-muted-foreground">{benefit}</span>
-                            </li>
+                            <div key={i} className="flex items-start p-2 hover:bg-secondary/30 rounded-md transition-colors">
+                              <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" weight="fill" />
+                              <span className="text-sm">{benefit}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>

@@ -1,7 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Zap, Car, Target, Award, Rocket, Fuel, Battery, Flame, ExternalLink, ArrowRight } from "lucide-react";
+import { 
+  Trophy, 
+  Lightning, 
+  Car, 
+  Target, 
+  Medal, 
+  Rocket,
+  GasPump, 
+  BatteryHigh, 
+  Fire, 
+  ArrowSquareOut, 
+  ArrowRight 
+} from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +36,7 @@ const achievements = [
       "1st in Asia — Regional Winners of Road to 2050 – Bonus Challenge",
       "1st in Asia — Regional Winners of Virtual Technical Inspection",
     ],
-    icon: Zap,
+    icon: Lightning,
   },
   {
     year: "2020",
@@ -33,7 +45,7 @@ const achievements = [
       "1st in Asia — Regional Winners of Electric Vehicle Battery Charging Challenge",
       "Top 5 Worldwide — Tracking and Reducing CO₂ Emissions from Vehicles",
     ],
-    icon: Battery,
+    icon: BatteryHigh,
   },
   {
     year: "2019",
@@ -42,7 +54,7 @@ const achievements = [
       "1st in India — Achieved a fuel efficiency of 270 km/l (Gasoline)",
       "Winner of Off-Track Safety Award — For exceptional safety practices and team discipline",
     ],
-    icon: Award,
+    icon: Trophy,
   },
   {
     year: "2017",
@@ -82,7 +94,7 @@ export default function SEMPage() {
                 What is Shell Eco-marathon?
               </h3>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Shell Eco-marathon is one of the world's leading energy-efficiency engineering programmes for students. 
+                Shell Eco-marathon is one of the world&apos;s leading energy-efficiency engineering programmes for students. 
                 It aims to push the boundaries of what is technically possible and inspire young people to become leading 
                 scientists and engineers of future energy solutions.
               </p>
@@ -111,7 +123,7 @@ export default function SEMPage() {
                     className="flex items-center gap-2"
                   >
                     Learn More About Shell Eco-marathon
-                    <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowSquareOut className="h-4 w-4 ml-1" weight="bold" />
                   </a>
                 </Button>
               </div>
@@ -132,7 +144,7 @@ export default function SEMPage() {
               <Card className="h-full hover:glow-hover transition-all">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Rocket className="h-8 w-8 text-primary" />
+                    <GasPump className="h-5 w-5 text-blue-400" weight="fill" />
                     <CardTitle className="text-2xl">1. Prototype</CardTitle>
                   </div>
                 </CardHeader>
@@ -153,7 +165,7 @@ export default function SEMPage() {
               <Card className="h-full hover:glow-hover transition-all">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Car className="h-8 w-8 text-primary" />
+                    <Lightning className="h-5 w-5 text-amber-400" weight="fill" />
                     <CardTitle className="text-2xl">2. Urban Concept</CardTitle>
                   </div>
                 </CardHeader>
@@ -172,7 +184,7 @@ export default function SEMPage() {
                     </li>
                   </ul>
                   <Badge variant="default" className="mt-4 animate-pulse">
-                    🚀 Team ETA's New Journey (2025+)
+                    Team ETA&apos;s New Journey (2025+)
                   </Badge>
                 </CardContent>
               </Card>
@@ -221,7 +233,7 @@ export default function SEMPage() {
                   bringing our engineering expertise to practical, road-ready vehicle designs.
                 </p>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
-                  Building on our legacy of record-breaking fuel efficiency and innovative design, we're now 
+                  Building on our legacy of record-breaking fuel efficiency and innovative design, we&apos;re now 
                   applying our knowledge to create vehicles that balance efficiency with real-world usability — 
                   vehicles that could one day drive on actual roads.
                 </p>
@@ -257,7 +269,7 @@ export default function SEMPage() {
               <Card className="h-full hover:glow-hover transition-all">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Flame className="h-8 w-8 text-primary" />
+                    <Fire className="h-5 w-5 text-red-400" weight="fill" />
                     <CardTitle className="text-xl">Internal Combustion</CardTitle>
                   </div>
                 </CardHeader>
@@ -287,7 +299,7 @@ export default function SEMPage() {
               <Card className="h-full hover:glow-hover transition-all">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <Battery className="h-8 w-8 text-primary" />
+                    <BatteryHigh className="h-5 w-5 text-green-400" weight="fill" />
                     <CardTitle className="text-xl">Electric Mobility</CardTitle>
                   </div>
                 </CardHeader>
@@ -319,7 +331,7 @@ export default function SEMPage() {
                 TEAM ETA & THE SHELL ECO-MARATHON
               </h2>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Team ETA proudly represents <span className="text-primary font-semibold">K. J. Somaiya College of Engineering, Mumbai</span>, 
+                Team ETA proudly represents <span className="text-primary font-semibold">K. J. Somaiya School of Engineering, Mumbai</span>, 
                 in the Shell Eco-marathon Asia and virtual international editions.
               </p>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
@@ -398,8 +410,8 @@ export default function SEMPage() {
                 </li>
               </ul>
               <blockquote className="text-xl font-semibold text-primary italic border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-lg">
-                "We believe the future of transportation lies in energy-efficient, sustainable solutions — 
-                and we are proud to be at the forefront of that transformation."
+                &quot;We believe the future of transportation lies in energy-efficient, sustainable solutions — 
+                and we are proud to be at the forefront of that transformation.&quot;
               </blockquote>
             </CardContent>
           </Card>

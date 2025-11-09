@@ -4,15 +4,18 @@
     "sponsors": [
       {
         "name": "Shell Eco-marathon",
-        "logo": "/sponsors/shell.png"
+        "logo": "/sponsors/shell.png",
+        "website": "https://www.shell.com/"
       },
       {
-        "name": "K. J. Somaiya College of Engineering",
-        "logo": "/sponsors/kjsce.png"
+        "name": "K. J. Somaiya School of Engineering",
+        "logo": "/sponsors/kjsce.png",
+        "website": "https://kjsce.somaiya.edu.in/"
       },
       {
         "name": "Somaiya Trust",
-        "logo": "/sponsors/somaiya_trust.png"
+        "logo": "/sponsors/somaiya_trust.png",
+        "website": "https://www.somaiya.edu.in/"
       }
     ]
   },
@@ -21,19 +24,23 @@
     "sponsors": [
       {
         "name": "Ansys",
-        "logo": "/sponsors/ansys.png"
+        "logo": "/sponsors/ansys.png",
+        "website": "https://www.ansys.com/"
       },
       {
         "name": "Altair",
-        "logo": "/sponsors/altair.png"
+        "logo": "/sponsors/altair.png",
+        "website": "https://www.altair.com/"
       },
       {
         "name": "Siemens NX / Solid Edge",
-        "logo": "/sponsors/siemens.png"
+        "logo": "/sponsors/siemens.png",
+        "website": "https://www.plm.automation.siemens.com/"
       },
       {
         "name": "ANSYS Innovation Space",
-        "logo": "/sponsors/ansys_innovation.png"
+        "logo": "/sponsors/ansys_innovation.png",
+        "website": "https://www.ansys.com/innovation-space"
       }
     ]
   },
@@ -42,19 +49,23 @@
     "sponsors": [
       {
         "name": "Autodesk",
-        "logo": "/sponsors/autodesk.png"
+        "logo": "/sponsors/autodesk.png",
+        "website": "https://www.autodesk.com/"
       },
       {
-        "name": "Aeron Composite Pvt. Ltd.",
-        "logo": "/sponsors/aeron.png"
+        "name": "Dassault Systèmes",
+        "logo": "/sponsors/dassault.png",
+        "website": "https://www.3ds.com/"
       },
       {
-        "name": "Poly Infusion",
-        "logo": "/sponsors/poly_infusion.png"
+        "name": "PTC Creo",
+        "logo": "/sponsors/ptc.png",
+        "website": "https://www.ptc.com/"
       },
       {
         "name": "SolidWorks Student Program",
-        "logo": "/sponsors/solidworks.png"
+        "logo": "/sponsors/solidworks.png",
+        "website": "https://www.solidworks.com/"
       }
     ]
   },
@@ -62,16 +73,19 @@
     "tier": "Bronze Sponsors",
     "sponsors": [
       {
-        "name": "Maker’s Asylum",
-        "logo": "/sponsors/makers_asylum.png"
+        "name": "Maker's Asylum",
+        "logo": "/sponsors/makers_asylum.png",
+        "website": "https://www.makersasylum.com/"
       },
       {
         "name": "RC Hobby Tech",
-        "logo": "/sponsors/rc_hobby.png"
+        "logo": "/sponsors/rc_hobby.png",
+        "website": "#"
       },
       {
         "name": "P. K. Shukla (Mentor Support)",
-        "logo": ""
+        "logo": "",
+        "website": "#"
       }
     ]
   },
@@ -80,13 +94,14 @@
     "sponsors": [
       {
         "name": "KJSCE Robotics Society",
-        "logo": ""
+        "logo": "",
+        "website": "#"
       },
       {
         "name": "Team ETA Alumni Network",
-        "logo": ""
+        "logo": "",
+        "website": "#"
       }
     ]
   }
 ]
-
