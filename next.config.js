@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode
-  reactStrictMode: true,
+  // Enable React strict mode in development
+  reactStrictMode: process.env.NODE_ENV !== 'production',
+  
+  // Enable production optimizations
+  productionBrowserSourceMaps: false,
+  optimizeFonts: true,
+  compress: true,
   
   // Image optimization
   images: {
