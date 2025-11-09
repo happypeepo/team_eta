@@ -150,6 +150,7 @@ export function Timeline({ children }: TimelineProps) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const [activeYear, setActiveYear] = useState<string | null>(null);
   const [lineStyle, setLineStyle] = useState<LineStyle>({ top: '0', height: '0' });
+  const [lineHeight, setLineHeight] = useState('0%');
   
   // Use a separate ref for the scroll container
   useEffect(() => {
@@ -182,6 +183,9 @@ export function Timeline({ children }: TimelineProps) {
     target: timelineRef,
     offset: ["start end", "end start"]
   });
+
+  // Transform scroll progress to position the indicator
+  const indicatorY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   // Convert children to array and filter out any null/undefined
   const childrenArray = React.Children.toArray(children).filter(Boolean);
@@ -216,6 +220,44 @@ export function Timeline({ children }: TimelineProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [years]);
   
+  // Update line height based on scroll
+  useEffect(() => {
+    const updateLineHeight = () => {
+      if (!containerRef.current) return;
+      
+      const container = containerRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate the visible height of the container
+      const containerTop = containerRect.top + scrollY;
+      const containerBottom = containerTop + containerRect.height;
+      const visibleTop = Math.max(0, scrollY - containerTop);
+      const visibleBottom = Math.min(containerRect.height, scrollY + viewportHeight - containerTop);
+      
+      // Calculate the visible height percentage
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      const totalHeight = containerRect.height;
+      const newHeight = totalHeight > 0 ? (visibleHeight / totalHeight) * 100 : 0;
+      
+      setLineHeight(`${Math.min(100, Math.max(0, newHeight))}%`);
+    };
+    
+    // Set initial height
+    updateLineHeight();
+    
+    // Add scroll and resize listeners
+    window.addEventListener('scroll', updateLineHeight, { passive: true });
+    window.addEventListener('resize', updateLineHeight);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', updateLineHeight);
+      window.removeEventListener('resize', updateLineHeight);
+    };
+  }, []);
+
   // Scroll to section when year is clicked
   const scrollToYear = (year: string) => {
     const section = containerRef.current?.querySelector(`[data-year="${year}"]`) as HTMLElement;
