@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowSquareOut, Sparkle, Star, Gem, Check, CheckCircle, Medal as Award } from "@phosphor-icons/react";
+import { ArrowSquareOut, Sparkle, Star, Diamond, Check, CheckCircle, Medal as Award } from "@phosphor-icons/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ const tierColors = {
 const sponsorshipTiers = [
   {
     name: "Title",
-    icon: Gem,
+    icon: Diamond,
     color: "from-purple-500 to-indigo-600",
     benefits: [
       "Local & International Event Invites",
@@ -176,7 +176,7 @@ export default function SponsorsPage() {
                     <Card className="h-full flex flex-col hover:glow-hover transition-all">
                       <CardHeader>
                         <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center mb-4`}>
-                          <Sparkle className="h-5 w-5 text-amber-400" weight="fill" />
+                          <Icon className="w-5 h-5 mr-2" weight="fill" />
                         </div>
                         <CardTitle className="text-2xl">{tier.name}</CardTitle>
                       </CardHeader>

@@ -17,7 +17,7 @@ import {
   Clock, 
   MapPin, 
   Flag, 
-  Rocket 
+  Rocket
 } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -220,7 +220,7 @@ export default function ShellEcoMarathonPage() {
             <Card className="hover:shadow-lg transition-all">
               <CardHeader>
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6 text-primary" />
+                  <Trophy className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle>Mileage Challenge</CardTitle>
               </CardHeader>
@@ -234,7 +234,7 @@ export default function ShellEcoMarathonPage() {
             <Card className="hover:shadow-lg transition-all">
               <CardHeader>
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6 text-primary" />
+                  <Trophy className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle>Autonomous Driving Competition</CardTitle>
               </CardHeader>
